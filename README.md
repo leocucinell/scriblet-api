@@ -45,4 +45,4 @@ This is the api backend supporting the application [Scriblet]()
 
 
 ## ERD
-![scriblet erd](https://i.imgur.com/bLpycHR.png)
+![scriblet erd](https://i.imgur.com/KMlmaJD.png)
