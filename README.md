@@ -1,9 +1,9 @@
 # Scriblet API
 
-## Routes
-| Syntax | Description |
-| ----------- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+## Base URL
+> In progress...
 
-## Controllers
+## Endpoints
+| Route | Description | Controller method |
+| --------- | --------- | --------- |
+| /example | Just a placeholder, will add more later | example() |
