@@ -18,12 +18,20 @@ This is the api backend supporting the application [Scriblet]()
 
 | Route | Method | Description | input parameters | Return parameters |
 | --------- | --------- | --------- | --------- | --------- |
+| /add | POST | adds a new subject | in progress... | created subject |
+| /:id | GET | retrieves a subject by id | id(params) | subject object |
+| /:id | PUT | edits a subject | id(params) | subject object |
+| /:id | DELETE | deletes a subject | id(params) | success message |
 
 
 **/quiz**
 
 | Route | Method | Description | input parameters | Return parameters |
 | --------- | --------- | --------- | --------- | --------- |
+| /add | POST | adds a new quiz | in progress... | created quiz |
+| /:id | GET | retrieves a quiz by id | id(params) | quiz object |
+| /:id | PUT | edits a quiz | id(params) | quiz object |
+| /:id | DELETE | deletes a quiz | id(params) | success message |
 
 
 **/note**
