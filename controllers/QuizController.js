@@ -4,7 +4,7 @@
 //POST: /add
 const addQuiz = (req, res) => {
     try{
-
+        
     } catch(err) {
         console.log(err);
     }
