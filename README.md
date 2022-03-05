@@ -8,3 +8,6 @@ This is the api backend supporting the application [Scriblet]()
 | Route | Description | Controller method |
 | --------- | --------- | --------- |
 | /example | Just a placeholder, will add more later | example() |
+
+## ERD
+![scriblet erd](https://i.imgur.com/bLpycHR.png)
