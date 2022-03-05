@@ -3,22 +3,38 @@
 //BASE URL: /quiz
 //POST: /add
 const addQuiz = (req, res) => {
-    res.send('Add a quiz')
+    try{
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //GET: /:id
 const getQuiz = (req, res) => {
-    res.send(`Retrieve quiz #${req.params.id}`);
+    try{
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //PUT: /:id
 const editQuiz = (req, res) => {
-    res.send(`Edit quiz #${req.params.id}`);
+    try{
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //DELETE: /:id
 const deleteQuiz = (req, res) => {
-    res.send(`Delete quiz #${req.params.id}`);
+    try{
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //SECTION: Export

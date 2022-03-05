@@ -3,22 +3,38 @@
 //BASE URL: /student
 //POST: /add
 const addSubject = (req, res) => {
-    res.send('Add a subject');
+    try{
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //GET: /:id
 const getSubject = (req, res) => {
-    res.send(`Get subject #${req.params.id}`);
+    try{
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //PUT: /:id
 const editSubject = (req, res) => {
-    res.send(`Edit subject #${req.params.id}`);
+    try{
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //DELETE: /:id
 const deleteSubject = (req, res) => {
-    res.send(`Delete subject #${req.params.id}`);
+    try{
+
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //SECTION: Export

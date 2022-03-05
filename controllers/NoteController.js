@@ -5,23 +5,67 @@ const prisma = new PrismaClient()
 
 //BASE URL: /note
 //POST: /add
-const addNote = (req, res) => {
-    
+const addNote = async (req, res) => {
+    try{
+        const createdNote = await prisma.note.create({
+            data: {
+                title: "TEST",
+                body: "This is a test note",
+                student_id: 2,
+                subject_id: 1
+            }
+        });
+        res.send(createdNote);
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //GET: /:id
-const getNote = (req, res) => {
-    res.send(`Retrieve note by id #${req.params.id}`);
+const getNote = async (req, res) => {
+    try{
+        const retrievedNote = await prisma.note.findUnique({
+            where: {
+                id: parseInt(req.params.id)
+            }
+        });
+        res.send(retrievedNote);
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //PUT: /:id
-const editNote = (req, res) => {
-    res.send(`Edit note by id #${req.params.id}`);
+const editNote = async (req, res) => {
+    try{
+        const editedNote = await prisma.note.update({
+            where: {
+                id: parseInt(req.params.id)
+            }, 
+            data: {
+                title: "TEST",
+                body: "This note has been edited",
+                subject_id: 1
+            }
+        });
+        res.send(editedNote);
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //DELETE: /:id
-const deleteNote = (req, res) => {
-    res.send(`Delete note with id #${req.params.id}`);
+const deleteNote = async (req, res) => {
+    try{
+        const deletedNote = await prisma.note.delete({
+            where: {
+                id:parseInt(req.params.id)
+            }
+        });
+        res.send(deletedNote);
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 //SECTION: Export

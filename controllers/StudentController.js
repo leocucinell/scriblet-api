@@ -13,6 +13,12 @@ const addStudent = async (req, res) => {
                 password: 'password'
             }
         });
+        await prisma.subject.create({
+            data: {
+                title: 'global', //NOTE: Might have to make unique per user or change name?
+                owner_id: createdStudent.id
+            }
+        });
         res.send(createdStudent);
     } catch(err) {
         console.log(err);
