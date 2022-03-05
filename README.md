@@ -1,6 +1,9 @@
 # Scriblet API
 
 ## Routes
-> Another test
+| Syntax | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
 
 ## Controllers
