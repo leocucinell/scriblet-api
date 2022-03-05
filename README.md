@@ -7,20 +7,21 @@ This is the api backend supporting the application [Scriblet]()
 ## Endpoints
 
 **Students**
-| Route | Description | input parameters | Return parameters |
-| --------- | --------- | --------- | --------- |
-| /example | Just a placeholder, will add more later | id | Success message |
----
+| Route | Method | Description | input parameters | Return parameters |
+| --------- | --------- | --------- | --------- | --------- |
+| /add | POST | add a student to the db | email, hashed password | Success message |
+| /:id | GET | retrieves a student by id | id (param) | the student object |
+
 
 **Subjects**
 | Route | Description | input parameters | Return parameters |
 | --------- | --------- | --------- | --------- |
----
+
 
 **Quizes**
 | Route | Description | input parameters | Return parameters |
 | --------- | --------- | --------- | --------- |
----
+
 
 **Notes**
 | Route | Description | input parameters | Return parameters |
