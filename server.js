@@ -10,6 +10,8 @@ app.use(express.json());
 //SECTION: Routes
 app.use('/student', routes.studentRoutes);
 app.use('/note', routes.noteRoutes);
+app.use('/quiz', routes.quizRoutes);
+app.use('/subject', routes.subjectRoutes);
 
 //SECTION: Server Bind
 const _port = process.env.PORT || 4500

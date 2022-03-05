@@ -1,4 +1,6 @@
 module.exports = {
     studentRoutes: require('./StudentRoutes'),
-    noteRoutes: require('./NoteRoutes')
+    noteRoutes: require('./NoteRoutes'),
+    quizRoutes: require('./QuizRoutes'),
+    subjectRoutes: require('./SubjectRoutes')
 }
