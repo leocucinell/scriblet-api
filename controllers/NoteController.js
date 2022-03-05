@@ -1,9 +1,12 @@
+const { PrismaClient } = require('@prisma/client')
+const prisma = new PrismaClient()
+
 //SECTION: Methods
 
 //BASE URL: /note
 //POST: /add
 const addNote = (req, res) => {
-    res.send('Create new note');
+    
 }
 
 //GET: /:id

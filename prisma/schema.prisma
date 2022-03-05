@@ -15,7 +15,7 @@ model Student {
  email String
  password String
  //MANY
- subjects Subject[] 
+ subjects Subject[]
  quizes Quiz[]
  notes Note[]
 }
