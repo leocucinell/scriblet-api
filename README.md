@@ -16,19 +16,19 @@ This is the api backend supporting the application [Scriblet]()
 
 **Subjects**
 */subject*
-| Route | Description | input parameters | Return parameters |
+| Route | Method | Description | input parameters | Return parameters |
 | --------- | --------- | --------- | --------- |
 
 
 **Quizes**
 */quiz*
-| Route | Description | input parameters | Return parameters |
+| Route | Method | Description | input parameters | Return parameters |
 | --------- | --------- | --------- | --------- |
 
 
 **Notes**
 */note*
-| Route | Description | input parameters | Return parameters |
+| Route | Method | Description | input parameters | Return parameters |
 | --------- | --------- | --------- | --------- |
 | /add | POST | adds a new note | in progress... | created note |
 | /:id | GET | retrieves a note by id | id(params) | note object |
