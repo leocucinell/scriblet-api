@@ -1,3 +1,4 @@
 module.exports = {
-    studentController: require('./StudentController')
+    studentController: require('./StudentController'),
+    noteController: require('./NoteController')
 }

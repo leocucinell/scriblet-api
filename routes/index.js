@@ -1,3 +1,4 @@
 module.exports = {
-    studentRoutes: require('./StudentRoutes')
+    studentRoutes: require('./StudentRoutes'),
+    noteRoutes: require('./NoteRoutes')
 }
