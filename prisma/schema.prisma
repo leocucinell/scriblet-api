@@ -12,7 +12,7 @@ datasource db {
 
 model Student {
  id Int @id @default(autoincrement())
- email String
+ email String @unique
  password String
  //MANY
  subjects Subject[]
