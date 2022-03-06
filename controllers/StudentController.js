@@ -9,26 +9,33 @@ const bcrypt = require('bcrypt');
 const addStudent = async (req, res) => {
     try{
         const hashedPass = bcrypt.hash(req.body.password, 10, async (err, result) => {
-            if(err){
-                console.log(err);
-                res.send('Error hashing user password');
+            try{
+                if(err){
+                    console.log(err);
+                    res.send('Error hashing user password');
+                }
+                const createdStudent = await prisma.student.create({
+                    data: {
+                        email: req.body.email,
+                        password: result
+                    }
+                });
+                await prisma.subject.create({
+                    data: {
+                        title: 'global', 
+                        owner_id: createdStudent.id
+                    }
+                });
+                res.send(createdStudent); //NOTE: student has been created!
+            } catch (err) {
+                console.log('INSIDE ERROR BLOCK AFTER BCRYPT HASH FOR SIGN UP')
+                res.send('User with that email already exists')
             }
-            const createdStudent = await prisma.student.create({
-                data: {
-                    email: req.body.email,
-                    password: result
-                }
-            });
-            await prisma.subject.create({
-                data: {
-                    title: 'global', 
-                    owner_id: createdStudent.id
-                }
-            });
-            res.send(createdStudent); //NOTE: student has been created!
         });
     } catch(err) {
+        console.log('INSIDE ERROR BLOCK FOR SIGN UP');
         console.log(err);
+        res.send('Unable to hash password');
     }
 }
 
