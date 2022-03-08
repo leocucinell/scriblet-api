@@ -18,7 +18,7 @@ This is the api backend supporting the application [Scriblet]()
 
 | Route | Method | Description | input parameters | Return parameters |
 | --------- | --------- | --------- | --------- | --------- |
-| /add | POST | adds a new subject | in progress... | created subject |
+| /add | POST | adds a new subject | {title: String, studentId: Int} | created subject |
 | /:id | GET | retrieves a subject by id | id(params) | subject object |
 | /:id | PUT | edits a subject | id(params) | subject object |
 | /:id | DELETE | deletes a subject | id(params) | deleted object |
