@@ -10,8 +10,8 @@ const addSubject = async (req, res) => {
     try{
         const createdSubject = await prisma.subject.create({
             data: {
-                title: "Subject TEst title",
-                owner_id: 1
+                title: req.body.title,
+                owner_id: req.body.studentId
             }
         });
         res.send(createdSubject);
