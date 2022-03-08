@@ -5,6 +5,7 @@ const controller = require('../controllers');
 //SECTION: Routes
 //BASE URL: /subject
 router.route('/add').post(controller.subjectController.addSubject);
+router.route('/all/:id').get(controller.subjectController.retrieveStudentSubjects);
 router.route('/:id').get(controller.subjectController.getSubject);
 router.route('/:id').put(controller.subjectController.editSubject);
 router.route('/:id').delete(controller.subjectController.deleteSubject);

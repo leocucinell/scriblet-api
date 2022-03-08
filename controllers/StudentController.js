@@ -45,13 +45,29 @@ const authStudent = async (req, res) => {
         const retrievedStudent = await prisma.student.findUnique({
             where: {
                 email: req.body.email
+            }, 
+            include: {
+                subjects: true,
+                quizes: true,
+                notes: true
             }
         });
+        if(retrievedStudent == null){
+            return res.send('user does not exist');
+        }
         const compareStudent = bcrypt.compare(req.body.password, retrievedStudent.password, (err, result) => {
             if(err || !result) {
                 return res.send('Incorrect password');
             }
-            res.send(retrievedStudent);
+            const newStudentObj = {
+                email: retrievedStudent.email,
+                id: retrievedStudent.id
+                //NOTE: Front end retrieves these sepperately
+                // subjects: retrievedStudent.subjects,
+                // quizes: retrievedStudent.quizes,
+                // notes: retrievedStudent.notes
+            }
+            res.send(newStudentObj);
         });
     } catch(err) {
         console.log(err);

@@ -1,9 +1,10 @@
 const { PrismaClient } = require('@prisma/client');
+const { retrieveQuestion } = require('./QuestionController');
 const prisma = new PrismaClient();
 
 //SECTION: Methods
 
-//BASE URL: /student
+//BASE URL: /subject
 //POST: /add
 const addSubject = async (req, res) => {
     try{
@@ -19,6 +20,21 @@ const addSubject = async (req, res) => {
     }
 }
 
+//GET: /all/:id - retrieves all subjects for a single student
+const retrieveStudentSubjects = async (req, res) => {
+    try{
+        const retrievedSubjects = await prisma.subject.findMany({
+            where: {
+                owner_id: parseInt(req.params.id)
+            }
+        });
+        res.send(retrievedSubjects);
+    } catch(err) {  
+        console.log(err)
+        res.send('Error retrieving student subjects')
+    }
+}
+
 //GET: /:id
 const getSubject = async (req, res) => {
     try{
@@ -26,7 +42,7 @@ const getSubject = async (req, res) => {
             where: {
                 id: parseInt(req.params.id)
             }
-        });
+        })
         res.send(retrievedSubject);
     } catch(err) {
         console.log(err);
@@ -58,6 +74,7 @@ const deleteSubject = async (req, res) => {
                 id: parseInt(req.params.id)
             }
         });
+        res.send(deletedSubject)
     } catch(err) {
         console.log(err);
     }
@@ -66,6 +83,7 @@ const deleteSubject = async (req, res) => {
 //SECTION: Export
 module.exports = {
     addSubject,
+    retrieveStudentSubjects,
     getSubject,
     editSubject,
     deleteSubject

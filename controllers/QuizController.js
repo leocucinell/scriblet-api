@@ -20,6 +20,23 @@ const addQuiz = async (req, res) => {
     }
 }
 
+//GET: all/:id - retrieve all quizes attached to a student
+const retrieveStudentQuizes = async (req, res) => {
+    try{
+
+        const studentQuizes = await prisma.quiz.findMany({
+            where: {
+                student_id: parseInt(req.params.id)
+            }
+        });
+        res.send(studentQuizes);
+
+    } catch(err) {
+        console.log(err);
+        res.send('error loading student quizes');
+    }
+}
+
 //GET: /:id
 const getQuiz = async (req, res) => {
     try{
@@ -72,6 +89,7 @@ const deleteQuiz = async (req, res) => {
 //SECTION: Export
 module.exports = {
     addQuiz,
+    retrieveStudentQuizes,
     getQuiz,
     editQuiz,
     deleteQuiz

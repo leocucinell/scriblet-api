@@ -21,6 +21,21 @@ const addNote = async (req, res) => {
     }
 }
 
+//GET: /all/:id - retrieve all student notes
+const retrieveStudentNotes = async (req, res) => {
+    try {
+        const studentNotes = await prisma.note.findMany({
+            where: {
+                student_id: parseInt(req.params.id)
+            }
+        });
+        res.send(studentNotes);
+    } catch(err) {
+        console.log(err)
+        res.send('Unable to load student notes');
+    }
+}
+
 //GET: /:id
 const getNote = async (req, res) => {
     try{
@@ -71,6 +86,7 @@ const deleteNote = async (req, res) => {
 //SECTION: Export
 module.exports = {
     addNote,
+    retrieveStudentNotes,
     getNote,
     editNote,
     deleteNote

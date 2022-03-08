@@ -5,6 +5,7 @@ const controller = require('../controllers');
 //SECTION: Routes
 //BASE URL: /note
 router.route('/add').post(controller.noteController.addNote);
+router.route('/all/:id').get(controller.noteController.retrieveStudentNotes)
 router.route('/:id').get(controller.noteController.getNote);
 router.route('/:id').put(controller.noteController.editNote);
 router.route('/:id').delete(controller.noteController.deleteNote);
