@@ -9,9 +9,9 @@ const addQuiz = async (req, res) => {
     try{
         const createdQuiz = await prisma.quiz.create({
             data: {
-                title: "Test Quiz title",
-                subject_id: 1,
-                student_id: 2
+                title: req.body.title,
+                subject_id: req.body.subjectId,
+                student_id: req.body.studentId
             }
         });
         res.send(createdQuiz);
