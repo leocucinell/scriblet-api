@@ -41,6 +41,10 @@ const getSubject = async (req, res) => {
         const retrievedSubject = await prisma.subject.findUnique({
             where: {
                 id: parseInt(req.params.id)
+            },
+            include: {
+                quizes: true,
+                notes: true
             }
         })
         res.send(retrievedSubject);
