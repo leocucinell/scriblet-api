@@ -9,10 +9,10 @@ const addNote = async (req, res) => {
     try{
         const createdNote = await prisma.note.create({
             data: {
-                title: req.body.note,
-                body: "This is a test note",
-                student_id: 2,
-                subject_id: 1
+                title: req.body.title,
+                body: req.body.body,
+                student_id: req.body.student_id,
+                subject_id: req.body.subject_id
             }
         });
         res.send(createdNote);

@@ -14,6 +14,7 @@ app.use('/student', routes.studentRoutes);
 app.use('/note', routes.noteRoutes);
 app.use('/quiz', routes.quizRoutes);
 app.use('/subject', routes.subjectRoutes);
+app.use('/question', routes.questionRoutes);
 
 //SECTION: Server Bind
 const _port = process.env.PORT || 4500

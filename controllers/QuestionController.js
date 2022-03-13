@@ -3,15 +3,15 @@ const prisma = new PrismaClient()
 
 //SECTION: Methods
 
-//BASE URL: /note
+//BASE URL: /question
 //POST: /add
 const addQuestion = async (req, res) => {
     try{
         const addedQuestion = await prisma.question.create({
             data: {
-                title: "What is the powerhouse of the cell",
-                answer: "Mitochondria",
-                quiz_id: 1
+                title: req.body.questionTitle,
+                answer: req.body.questionAnswer,
+                quiz_id: parseInt(req.body.quizId)
             }
         });
         res.send(addedQuestion);
